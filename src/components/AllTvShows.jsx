@@ -7,6 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { FaStar } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const AllTvShows = ({ allTvShows }) => {
   console.log(allTvShows);
@@ -16,7 +17,7 @@ const AllTvShows = ({ allTvShows }) => {
         {allTvShows && allTvShows.length > 0 ? (
           <div>
             {allTvShows.map((item) => (
-              <Card sx={{ maxWidth: 345 }}>
+              <Card sx={{ maxWidth: 345 }} key={item?.show?.id}>
                 <CardMedia
                   sx={{ height: 440 }}
                   image={
@@ -35,7 +36,10 @@ const AllTvShows = ({ allTvShows }) => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Show Details</Button>
+                  <Link to={`/details/${item?.show?.id}`}>
+                    <Button variant="contained">Show Details</Button>
+                  </Link>
+
                   {/* <Button size="small">Learn More</Button> */}
                 </CardActions>
               </Card>
