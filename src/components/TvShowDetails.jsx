@@ -29,7 +29,9 @@ const TvShowDetails = ({ selectedShowDetails }) => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Link to={`/details/${item?.show?.id}`}>
+                  <Link
+                    to={`/booking/${item?.show?.name}/${item?.show?.language}`}
+                  >
                     <Button variant="contained">Book Show Tickets</Button>
                   </Link>
 
