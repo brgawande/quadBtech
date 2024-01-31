@@ -1,9 +1,21 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./screens/Home";
+import Details from "./screens/Details";
+import Booking from "./screens/Booking";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
-      <h1 className="text-center">Hello world</h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/details" element={<Details />} />
+          <Route path="/booking" element={<Booking />} />
+        </Routes>
+        <Toaster />
+      </Router>
     </>
   );
 }
