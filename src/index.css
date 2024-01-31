@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* webkit scrollbar starts */
+/* webkit scrollbar ends */
+
+@layer components{
+  .max-container{
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .dflex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bb{
+    border: 2px solid black;
+  }
+  .bw{
+    border:"2px solid white"
+  }
+}
