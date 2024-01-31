@@ -4,6 +4,7 @@ import Home from "./screens/Home";
 import Details from "./screens/Details";
 import Booking from "./screens/Booking";
 import { Toaster } from "react-hot-toast";
+import MyBooking from "./screens/MyBooking";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/mybooking" element={<MyBooking />} />
           <Route path="/details/:id" element={<Details />} />
           <Route path="/booking/:name/:language" element={<Booking />} />
         </Routes>
