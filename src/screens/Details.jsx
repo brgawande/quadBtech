@@ -31,7 +31,7 @@ const Details = () => {
 
   return (
     <div>
-      <h1>Tv Show Details</h1>
+      {/* <h1>Tv Show Details</h1> */}
       {/* <h1>{id}</h1> */}
       <TvShowDetails selectedShowDetails={selectedShowDetails} />
     </div>

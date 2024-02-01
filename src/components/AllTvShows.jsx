@@ -141,8 +141,8 @@ const AllTvShows = ({ allTvShows }) => {
             <>
               {" "}
               {allTvShows.map((item) => (
-                <a key={item?.show?.name} className="group">
-                  <div className=" aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                <a key={item?.show?.name} className="group pb-4 bg-dark-blue">
+                  <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                     <img
                       src={
                         item?.show?.image?.medium ||
@@ -152,13 +152,18 @@ const AllTvShows = ({ allTvShows }) => {
                       className="h-full w-full object-cover object-center group-hover:opacity-75"
                     />
                   </div>
-                  <h3 className="mt-4  text-black font-bold text-xl">
+                  <h3 className="mt-4  text-white pl-2 font-bold text-xl">
                     {item?.show?.name}
                   </h3>
-                  <p className="mt-1 text-lg font-medium text-gray-900 flex">
-                    <FaStar className="text-yellow-500" />
+                  <p className="mt-1 text-lg font-medium pb-2 text-white pl-2 flex items-center gap-x-4">
+                    <FaStar className="text-yellow" />
                     {item?.show?.rating?.average || 0}
                   </p>
+                  <Link to={`/details/${item?.show?.id}`}>
+                    <Button style={{ marginLeft: "8px" }} variant="contained">
+                      Show Details
+                    </Button>
+                  </Link>
                 </a>
               ))}
             </>
