@@ -15,36 +15,60 @@ const MyBooking = () => {
     setBookings(existingBookings);
   }, []);
   console.log(bookings);
+
   return (
     <div>
       <div>
-        <h1>My Bookings</h1>
-        {bookings && bookings.length > 0 ? (
-          <>
-            {bookings.map((item) => (
-              <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                  sx={{ height: 440 }}
-                  image={
-                    //   item?.show?.image?.medium ||
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5l2N8CSq3Pz_Avi5abDq_iEZErbODkcW3Lg&usqp=CAU"
-                  }
-                  // title={item?.show?.name}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {item?.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    <FaStar className="text-yellow-500" /> {item?.language}
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </>
-        ) : (
-          <h1>Not Yet Booked? book now</h1>
-        )}
+        <>
+          <div className="bg-white">
+            <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-8 lg:max-w-7xl lg:px-8">
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+                My Bookings
+              </h2>
+              {bookings && bookings.length > 0 ? (
+                <>
+                  {" "}
+                  <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    {bookings.map((item) => (
+                      <div
+                        key={item.id}
+                        className="border border-[#cdcdcd] rounded-lg shadow-lg group relative pb-8"
+                      >
+                        <div className="mt-4 flex flex-col gap-y-4 justify-between items-center">
+                          <div>
+                            <h3 className=" text-black font-bold text-2xl py-3">
+                              <a>
+                                <span
+                                  aria-hidden="true"
+                                  className="absolute inset-0 font-bold text-2xl"
+                                />
+                                {item.name}
+                              </a>
+                            </h3>
+                            <p className="mt-1  text-black font-semibold text-xl">
+                              Duration - {item.duration}
+                            </p>
+                          </div>
+                          <p className=" text-black font-semibold text-xl">
+                            {item.generes}
+                          </p>
+                          <p className=" text-black font-semibold text-xl">
+                            language - {item.language}
+                          </p>
+                          <p className=" text-black font-semibold text-xl">
+                            Peoples - {item.people}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <h1>Loading</h1>
+              )}
+            </div>
+          </div>
+        </>
       </div>
     </div>
   );

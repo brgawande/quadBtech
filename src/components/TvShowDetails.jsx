@@ -8,40 +8,16 @@ import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 
 const TvShowDetails = ({ selectedShowDetails }) => {
-  const premieredDate = selectedShowDetails?.show?.premiered;
-  const year = premieredDate ? premieredDate.split("-")[0] : null;
+  // const imageurl = selectedShowDetails[0]?.show?.image?.medium;
+  // const url = imageurl.substring(26);
+  // console.log(url);
+
+  console.log(selectedShowDetails);
   return (
     <div>
       <div className="bb">
         {selectedShowDetails &&
           selectedShowDetails.map((item) => (
-            // <Card sx={{ maxWidth: 345 }}>
-            //   <CardActionArea>
-            //     <CardMedia
-            //       component="img"
-            //       height="140"
-            //       image={item?.show?.image?.original}
-            //       alt={item?.show?.name}
-            //     />
-            //     <CardContent>
-            //       <Typography gutterBottom variant="h5" component="div">
-            //         {item?.show?.name}
-            //       </Typography>
-            //       <Typography variant="body2" color="text.secondary">
-            //         {item?.show?.summary}
-            //       </Typography>
-            //     </CardContent>
-            //     <CardActions>
-            //       <Link
-            //         to={`/booking/${item?.show?.name}/${item?.show?.language}`}
-            //       >
-            //         <Button variant="contained">Book Show Tickets</Button>
-            //       </Link>
-
-            //       {/* <Button size="small">Learn More</Button> */}
-            //     </CardActions>
-            //   </CardActionArea>
-            // </Card>
             <div className="bb min-h-[90vh] flex ">
               {/* left side image starts */}
               <div className="bb w-[30%]">
@@ -76,7 +52,7 @@ const TvShowDetails = ({ selectedShowDetails }) => {
                   {item?.show?.summary}
                 </p>
                 <Link
-                  to={`/booking/${item?.show?.name}/${item?.show?.language}`}
+                  to={`/booking/${item?.show?.name}/${item?.show?.language}/${item?.show?.runtime}/${item?.show?.genres}`}
                 >
                   <button className="mt-6 px-16 py-2 font-bold rounded-full text-black bg-yellow">
                     Book Now

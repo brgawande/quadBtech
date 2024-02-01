@@ -18,7 +18,10 @@ function App() {
           <Route path="*" element={<Example />} />
           <Route path="/mybooking" element={<MyBooking />} />
           <Route path="/details/:id" element={<Details />} />
-          <Route path="/booking/:name/:language" element={<Booking />} />
+          <Route
+            path="/booking/:name/:language/:duration/:generes"
+            element={<Booking />}
+          />
         </Routes>
         <Toaster />
       </Router>
