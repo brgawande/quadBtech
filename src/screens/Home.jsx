@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <>
       <div>
-        <h1>All Tv Shoews</h1>
+        <h1 className="text-center font-bold text-2xl py-2">All Tv Shows</h1>
         <AllTvShows allTvShows={allTvShows} />
       </div>
     </>

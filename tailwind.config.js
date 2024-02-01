@@ -16,6 +16,8 @@ export default {
     extend: {
       colors: {
         primary: "ECEEFF",
+        "dark-blue": "#1f2937",
+        yellow: "#ffd401",
       },
     },
   },

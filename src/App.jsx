@@ -5,11 +5,13 @@ import Details from "./screens/Details";
 import Booking from "./screens/Booking";
 import { Toaster } from "react-hot-toast";
 import MyBooking from "./screens/MyBooking";
+import Header from "./layouts/Header";
 
 function App() {
   return (
     <>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mybooking" element={<MyBooking />} />
